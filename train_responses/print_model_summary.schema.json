@@ -1,0 +1,23 @@
+{
+   "definitions": {},
+   "$schema": "http://json-schema.org/draft-07/schema#",
+   "$id": "print_model_summary.json",
+   "type": "object",
+   "title": "Schema for the print_model_summary train response",
+   "required": [
+     "content"
+   ],
+   "properties": {
+     "content": {
+       "$id": "#/properties/content",
+       "type": "string",
+       "title": "The Content Schema",
+       "default": "",
+       "examples": [
+         "This is some String describing the summary of the model computed so far."
+        ],
+       "pattern": "^(.*)$"
+      }
+   }
+}
+

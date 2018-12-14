@@ -1,0 +1,31 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "environmentVariable.json",
+  "type": "object",
+  "title": "Schema for describing environment variables",
+  "required": [
+    "name",
+    "type"
+  ],
+  "properties": {
+    "name": {
+      "$id": "#/properties/name",
+      "type": "string",
+      "title": "The Name Schema",
+      "default": "",
+      "examples": [
+        "MY_ENVIRONMENT_VARIABLE"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "type": {
+      "$id": "#/properties/type",
+      "enum": [
+        "httpUrl"
+      ],
+      "title": "The Type Schema",
+      "default": ""
+    }
+  }
+}

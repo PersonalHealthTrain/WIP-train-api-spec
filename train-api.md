@@ -1,5 +1,36 @@
 # The Train API V1
 
+
+
+## Requirement
+
+A requirement in the sense of the Train API is a property of the
+environment that the train container is executed in. For example, a Train
+might require to be executed in a environment (in the sense of an Operating
+System) that has an environment variable set. For this the requirement
+would look like:
+
+```
+{
+  "type": "environmentVariable",
+  "target": "URL",
+  "name": "REQUIRED_VARIABLE_NAME"
+}
+```
+The `type` specifies which further attributes (keys) this requirement
+has. In the case here, the `type` `environmentVariable` comes with two
+attributes, which are `target` and `name`.
+
+JSON schemata for the requirements should be developed in this repository.
+For now, we can say that the allowed values of `type` come from a controlled
+vocabulary (CV), which should be reflected in the accompanying JSON schema file.
+
+For now, the list for supported Requirement `type`s is given as follows:
+
+`type`                | Attributes           | Description
+----------------------|----------------------|------------------------------------------
+`environmentVariable` | `name`, `target`     | States that a environment variable needs to be set in the container. This implies that the OS running inside the container supports environment variables (which all reasonable choices of container images do). For compatibility, an environment variable `name` must match the regex `^[A-Z]+(_[A-Z]+)*$`. There is a CV for denoting the supported `target`s (in my brain, not yet written down).
+
 ## Introduction
 
 The Train API defines the set of commands that a train image needs to understand

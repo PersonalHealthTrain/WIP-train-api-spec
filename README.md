@@ -52,7 +52,7 @@ Each train image needs to implement the Train API to be valid.
 The Train API V1 supports the following behaviors and commands.
 
 Behavior                        | Command               | Description | OCI Image Config at runtime
---------------------------------|-----------------------|---------------------------------------
+--------------------------------|-----------------------|-------------|--------------------------
 Print a summary of the model    | `print_model_summary` | Print the summary of the model as the train response. This is intended to give the command issuer a brief summary of the state that the model is currently in (like what are the weight s currently) | None
 Runs the encapsulated algorithm | `run_algorithm`       | Runs the encapsulated algorithm. The resulting exited container contains files that is used to generate the successor train image. | **config.Env**
 List all the resources that the train wants to consume | `list_resources` | Lists all the resources that the train wants to consume. This interface can be used to determine the requirements of a train at a very explicit level. | None
